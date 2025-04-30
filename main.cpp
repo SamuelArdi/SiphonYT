@@ -4,39 +4,44 @@
 #include <string>
 #include <vector>
 
-void showHelp() {
-  std::cout << "siphonyt [options]" << std::endl;
+#include "arguments.h"
 
-  std::cout << "\nOptions:" << std::endl;
-  std::cout << "-h              Print this help text and exit" << std::endl;
-  std::cout << "-v              Print program version and exit" << std::endl;
-  std::cout << "-l <url>        The YouTube video link to convert" << std::endl;
-  std::cout << "-f <format>     Converts to available formats" << std::endl;
-  std::cout << "-o <output>     The output file name" << std::endl;
+int stoa(std::string str) {
+  // converts string into ascii numbers
+
+  std::string ascii = "";
+  for (int i = 0; i < str.length(); i++) {
+    ascii += std::to_string(static_cast<int>(str[i]));
+  }
+
+  return std::stoi(ascii);
 }
 
-void showVersion() {
-  std::cout << "SiphonYT alpha testing" << std::endl;
-  std::cout << "Version: 0.0.1.alpha" << std::endl;
+void handler(int item, bool &exit, std::string value = "") {
+  switch (item) {
+  case 45104: // -h
+    showHelp();
+    exit = true;
+    break;
+  case 45118: // -v
+    showVersion();
+    exit = true;
+    break;
+  }
 }
 
 int main(int argc, char *argv[]) {
-
-  std::map<std::string, std::string> args;
-
-  std::vector<std::string> singleArguments{"-h", "-v"};
-  std::vector<std::string> coupleArguments("-l", "-f");
-
-  if (args.empty()) {
+  if (argc < 2) {
     std::cout << "No arguments present, type '-h' for help" << std::endl;
     return 0;
   }
 
-  if (args[0] == "-h") {
-    showHelp();
-    return 0;
-  } else if (args[0] == "-v") {
-    showVersion();
+  bool exit = false;
+  for (int i = 1; i < argc; i++) {
+    handler(stoa(argv[i]), exit);
+  }
+
+  if (exit == true) {
     return 0;
   }
 
