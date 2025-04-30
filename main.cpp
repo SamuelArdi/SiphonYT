@@ -22,11 +22,10 @@ void showVersion() {
 
 int main(int argc, char *argv[]) {
 
-  std::map<int, std::string> args;
+  std::map<std::string, std::string> args;
 
-  for (int i = 1; i < argc; i++) {
-    args[i - 1] = argv[i];
-  }
+  std::vector<std::string> singleArguments{"-h", "-v"};
+  std::vector<std::string> coupleArguments("-l", "-f");
 
   if (args.empty()) {
     std::cout << "No arguments present, type '-h' for help" << std::endl;
