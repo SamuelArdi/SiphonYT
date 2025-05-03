@@ -1,9 +1,9 @@
 #include <algorithm>
+#include <cctype>
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
-#include <iterator>
 #include <string>
-#include <unordered_set>
 #include <vector>
 
 #include "arguments.h"
@@ -22,24 +22,46 @@ int stoa(std::string str) {
 */
 
 bool findVecElem(std::vector<std::string> vec, std::string elemToFind) {
-  auto it = std::find(vec.begin(), vec.end(), elemToFind);
-  if (it != vec.end()) {
+  auto elem = std::find(vec.begin(), vec.end(), elemToFind);
+  if (elem != vec.end()) {
     return true;
   } else {
     return false;
   }
 }
 
-void handler(std::vector<std::string> args, bool &exit) {
-  if (findVecElem(args, "-h") == true) {
+void handler(std::vector<std::string> args, bool &exit, std::string &command) {
+  // single arguments
+  if (findVecElem(args, "-h") == true || findVecElem(args, "--help") == true) {
     showHelp();
     exit = true;
+    return;
   }
-  if (findVecElem(args, "-v") == true) {
+
+  if (findVecElem(args, "-v") == true ||
+      findVecElem(args, "--version") == true) {
     showVersion();
     exit = true;
+    return;
   }
-};
+
+  if (findVecElem(args, "-x") == true) {
+    extractAudio(command);
+  }
+
+  // value arguments
+  if (findVecElem(args, "-f") == true) {
+    formatArgument(args, command, false);
+  } else if (findVecElem(args, "--format") == true) {
+    formatArgument(args, command, true);
+  }
+
+  if (findVecElem(args, "-q") == true) {
+    qualityArgument(args, command, false);
+  } else if (findVecElem(args, "--quality") == true) {
+    qualityArgument(args, command, true);
+  }
+}
 
 int main(int argc, char *argv[]) {
   if (argc < 2) {
@@ -52,29 +74,19 @@ int main(int argc, char *argv[]) {
     args.push_back(argv[i]);
   }
 
+  std::string url = "'" + std::string(argv[argc - 1]) + "'";
+  std::string command = "yt-dlp";
+  command += " ";
+
   bool exitCli;
-  handler(args, exitCli);
+  handler(args, exitCli, command);
+  command += url;
 
   if (exitCli == true) {
     return 0;
   }
 
-  /*
-  if (args.find("-h") != args.end()) {
-    showHelp();
-    return 0;
-  }
-
-  if (args.find("-l") != args.end()) {
-    std::cout << "URL: " << args["-l"] << std::endl;
-  } else {
-    std::cerr << "Error: No URL Provided" << std::endl;
-    return 1;
-  }
-
-  std::string format = (args.find("-f") != args.end()) ? args["-f"] : "mp3";
-  std::cout << "Format: " << format << std::endl;
-  */
+  system(command.c_str());
 
   return 0;
 }
