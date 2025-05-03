@@ -1,11 +1,14 @@
+#include <algorithm>
 #include <cstdlib>
 #include <iostream>
-#include <map>
+#include <iterator>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 #include "arguments.h"
 
+/*
 int stoa(std::string str) {
   // converts string into ascii numbers
 
@@ -16,32 +19,43 @@ int stoa(std::string str) {
 
   return std::stoi(ascii);
 }
+*/
 
-void handler(int item, bool &exit, std::string value = "") {
-  switch (item) {
-  case 45104: // -h
-    showHelp();
-    exit = true;
-    break;
-  case 45118: // -v
-    showVersion();
-    exit = true;
-    break;
+bool findVecElem(std::vector<std::string> vec, std::string elemToFind) {
+  auto it = std::find(vec.begin(), vec.end(), elemToFind);
+  if (it != vec.end()) {
+    return true;
+  } else {
+    return false;
   }
 }
 
+void handler(std::vector<std::string> args, bool &exit) {
+  if (findVecElem(args, "-h") == true) {
+    showHelp();
+    exit = true;
+  }
+  if (findVecElem(args, "-v") == true) {
+    showVersion();
+    exit = true;
+  }
+};
+
 int main(int argc, char *argv[]) {
   if (argc < 2) {
-    std::cout << "No arguments present, type '-h' for help" << std::endl;
+    std::cout << "No URL present, type '-h' for help" << std::endl;
     return 0;
   }
 
-  bool exit = false;
+  std::vector<std::string> args;
   for (int i = 1; i < argc; i++) {
-    handler(stoa(argv[i]), exit);
+    args.push_back(argv[i]);
   }
 
-  if (exit == true) {
+  bool exitCli;
+  handler(args, exitCli);
+
+  if (exitCli == true) {
     return 0;
   }
 
