@@ -46,7 +46,7 @@ void extractAudio(std::string cmd) {
 }
 
 // value arguments
-void formatArgument(std::vector<std::string> args, std::string cmd,
+void formatArgument(std::vector<std::string> args, std::string &cmd,
                     bool isLong) {
   int valueIndex;
   if (isLong == true) {
@@ -56,13 +56,11 @@ void formatArgument(std::vector<std::string> args, std::string cmd,
   }
 
   std::string value = lowerStr(args, valueIndex);
-  if (value == "mp4") {
-    cmd += "-S 'res,ext:mp4:m4a' --recode 'mp4'";
-    cmd += " ";
-  }
+  cmd += "-S 'res,ext:" + value + "' --recode '" + value + "'";
+  cmd += " ";
 }
 
-void qualityArgument(std::vector<std::string> args, std::string cmd,
+void qualityArgument(std::vector<std::string> args, std::string &cmd,
                      bool isLong) {
   int valueIndex;
   if (isLong == true) {
@@ -72,6 +70,4 @@ void qualityArgument(std::vector<std::string> args, std::string cmd,
   }
 
   std::string value = lowerStr(args, valueIndex);
-  cmd += "-S 'height:" + value + "' -f 'bv*'";
-  cmd += " ";
 }

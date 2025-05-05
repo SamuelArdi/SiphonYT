@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
   std::string command = "yt-dlp";
   command += " ";
 
-  bool exitCli;
+  bool exitCli = false;
   handler(args, exitCli, command);
   command += url;
 
@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  // std::cout << command;
   system(command.c_str());
 
   return 0;

@@ -9,9 +9,9 @@ void showHelp();
 void showVersion();
 void extractAudio(std::string cmd);
 
-void formatArgument(std::vector<std::string> args, std::string cmd,
+void formatArgument(std::vector<std::string> args, std::string &cmd,
                     bool isLong);
-void qualityArgument(std::vector<std::string> args, std::string cmd,
+void qualityArgument(std::vector<std::string> args, std::string &cmd,
                      bool isLong);
 
 #endif // ARGUMENTS_H
