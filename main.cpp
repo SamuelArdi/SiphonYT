@@ -74,7 +74,12 @@ int main(int argc, char *argv[]) {
     args.push_back(argv[i]);
   }
 
+#ifdef _WIN32
+  std::string url = std::string(argv[argc - 1]);
+#elifdef unix
   std::string url = "'" + std::string(argv[argc - 1]) + "'";
+#elifndef
+#endif
   std::string command = "yt-dlp";
   command += " ";
 
@@ -86,8 +91,7 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
-  // std::cout << command;
+  //std::cout << command;
   system(command.c_str());
-
   return 0;
 }

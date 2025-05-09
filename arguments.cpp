@@ -30,9 +30,7 @@ void showHelp() {
   std::cout << "-v                  Print program version and exit"
             << std::endl;
   std::cout << "-x                  Extract audio (no video)" << std::endl;
-  std::cout
-      << "-f <audio format>   Convert to selected audio format (default: opus)"
-      << std::endl;
+  std::cout<< "-f <audio format>    Convert to selected audio format (default: opus)" << std::endl;
 }
 
 void showVersion() {
@@ -45,6 +43,12 @@ void extractAudio(std::string cmd) {
   cmd += " ";
 }
 
+void keepOrgFile(std::string cmd) {
+  cmd += "-k";
+  cmd += " ";
+}
+
+
 // value arguments
 void formatArgument(std::vector<std::string> args, std::string &cmd,
                     bool isLong) {
@@ -56,12 +60,17 @@ void formatArgument(std::vector<std::string> args, std::string &cmd,
   }
 
   std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "-S res,ext;" + value + " --recode " + value;
+  cmd += " ";
+#elifdef unix
   cmd += "-S 'res,ext:" + value + "' --recode '" + value + "'";
   cmd += " ";
+#elifndef
+#endif
 }
 
-void qualityArgument(std::vector<std::string> args, std::string &cmd,
-                     bool isLong) {
+void qualityArgument(std::vector<std::string> args, std::string &cmd, bool isLong) {
   int valueIndex;
   if (isLong == true) {
     valueIndex = getValueIndex(args, "--quality");
@@ -70,4 +79,12 @@ void qualityArgument(std::vector<std::string> args, std::string &cmd,
   }
 
   std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "-S height:" + value + " -f bv*+ba/b";
+  cmd += " ";
+#elifdef unix
+  cmd += "-S 'height:" + value + "' -f 'bva*+ba/b'";
+  cmd += " ";
+#elifndef
+#endif
 }
