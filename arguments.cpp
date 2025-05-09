@@ -48,10 +48,8 @@ void keepOrgFile(std::string cmd) {
   cmd += " ";
 }
 
-
 // value arguments
-void formatArgument(std::vector<std::string> args, std::string &cmd,
-                    bool isLong) {
+void formatArgument(std::vector<std::string> args, std::string &cmd, bool isLong) {
   int valueIndex;
   if (isLong == true) {
     valueIndex = getValueIndex(args, "--format");
