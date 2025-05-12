@@ -8,19 +8,19 @@ The purpose of this project is simple, get the basic fundamental of using yt-dlp
 
 ## Arguments
 The current arguments that are working right now are:
--h --help <br/>
--v --version <br/>
--x <br/>
-<br/>
--f --format <br/>
--q --quality <br/>
+-h --help
+-v --version
+-x
+
+-f --format
+-q --quality
 
 Arguments that are WIP: <br/>
--o --output <br/>
+-o --output
 
 Plan to add arguments: <br/>
---yes-playlist <br/>
---write-subs <br/>
+--yes-playlist
+--write-subs
 --sub-langs  
 --limit-rate  
 --skip-download  
