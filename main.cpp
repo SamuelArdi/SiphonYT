@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
 
   bool exitCli = false;
   handler(args, exitCli, command);
-  command += url[url.size() - 1]; // removes the \0 char
+  command += url;
 
   if (exitCli == true) {
     return 0;

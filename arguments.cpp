@@ -98,8 +98,7 @@ void outputArgument(std::vector<std::string> args, std::string &cmd, bool isLong
   std::string value = lowerStr(args, valueIndex);
   // todo: fix output not working
 #ifdef _WIN32
-  //cmd += "-o " + value;
-  cmd += "-o '" + value + "'";
+  cmd += "-o \"" + value + "\"";
   cmd += " ";
 #elifdef unix
   cmd += "-o '" + value + "'";

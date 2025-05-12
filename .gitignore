@@ -1,10 +1,11 @@
 # not important files / directories
 test.cpp
-test
 test videos
 utilities
 .idea
+.idea.backup.bak
+testing/
 
 # cmake stuff
-cmake_release_build/
+cmake-build-release
 *.pdb
