@@ -35,7 +35,7 @@ void showHelp() {
 
 void showVersion() {
   std::cout << "SiphonYT pre-alpha testing" << std::endl;
-  std::cout << "Version: 0.9.0.alpha" << std::endl;
+  std::cout << "Version: 1.0.0" << std::endl;
 }
 
 void extractAudio(std::string cmd) {
