@@ -61,6 +61,12 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   } else if (findVecElem(args, "--quality") == true) {
     qualityArgument(args, command, true);
   }
+
+  if (findVecElem(args, "-o") == true) {
+    outputArgument(args, command, false);
+  } else if (findVecElem(args, "--output") == true) {
+    outputArgument(args, command, true);
+  }
 }
 
 int main(int argc, char *argv[]) {
@@ -85,13 +91,13 @@ int main(int argc, char *argv[]) {
 
   bool exitCli = false;
   handler(args, exitCli, command);
-  command += url;
+  command += url[url.size() - 1]; // removes the \0 char
 
   if (exitCli == true) {
     return 0;
   }
 
-  //std::cout << command;
+  //std::cout << command << std::endl;
   system(command.c_str());
   return 0;
 }

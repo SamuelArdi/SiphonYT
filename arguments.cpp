@@ -35,7 +35,7 @@ void showHelp() {
 
 void showVersion() {
   std::cout << "SiphonYT pre-alpha testing" << std::endl;
-  std::cout << "Version: 0.1.6.alpha" << std::endl;
+  std::cout << "Version: 0.9.0.alpha" << std::endl;
 }
 
 void extractAudio(std::string cmd) {
@@ -82,6 +82,27 @@ void qualityArgument(std::vector<std::string> args, std::string &cmd, bool isLon
   cmd += " ";
 #elifdef unix
   cmd += "-S 'height:" + value + "' -f 'bva*+ba/b'";
+  cmd += " ";
+#elifndef
+#endif
+}
+
+void outputArgument(std::vector<std::string> args, std::string &cmd, bool isLong) {
+  int valueIndex;
+  if (isLong == true) {
+    valueIndex = getValueIndex(args, "--output");
+  } else {
+    valueIndex = getValueIndex(args, "-o");
+  }
+
+  std::string value = lowerStr(args, valueIndex);
+  // todo: fix output not working
+#ifdef _WIN32
+  //cmd += "-o " + value;
+  cmd += "-o '" + value + "'";
+  cmd += " ";
+#elifdef unix
+  cmd += "-o '" + value + "'";
   cmd += " ";
 #elifndef
 #endif

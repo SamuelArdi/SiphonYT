@@ -1,7 +1,10 @@
+# not important files / directories
 test.cpp
 test
 test videos
 utilities
-cmake-build-debug
 .idea
+
+# cmake stuff
+cmake_release_build/
 *.pdb

@@ -14,5 +14,6 @@ void formatArgument(std::vector<std::string> args, std::string &cmd,
                     bool isLong);
 void qualityArgument(std::vector<std::string> args, std::string &cmd,
                      bool isLong);
+void outputArgument(std::vector<std::string> args, std::string &cmd, bool isLong);
 
 #endif // ARGUMENTS_H
