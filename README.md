@@ -14,11 +14,12 @@ The current arguments that are working right now are:
 
 -f --format  
 -q --quality  
+-o --output
 
 Arguments that are WIP:  
--o --output  
+as of this moment, no arguments are WIP
 
-Plan to add arguments: <br/>
+Plan to add arguments:  
 --yes-playlist
 --write-subs
 --sub-langs  
