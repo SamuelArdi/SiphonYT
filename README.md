@@ -7,16 +7,16 @@ This project is a starting point for another project I will be doing after this,
 The purpose of this project is simple, get the basic fundamental of using yt-dlp, and once I've gotten the grasp on how it works and how I can utilize it to the fullest I will be moving on to the real project.
 
 ## Arguments
-The current arguments that are working right now are:
--h --help
--v --version
--x
+The current arguments that are working right now are:  
+-h --help  
+-v --version  
+-x  
 
--f --format
--q --quality
+-f --format  
+-q --quality  
 
-Arguments that are WIP: <br/>
--o --output
+Arguments that are WIP:  
+-o --output  
 
 Plan to add arguments: <br/>
 --yes-playlist
