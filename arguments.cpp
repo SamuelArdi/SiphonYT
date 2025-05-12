@@ -59,10 +59,10 @@ void formatArgument(std::vector<std::string> args, std::string &cmd, bool isLong
 
   std::string value = lowerStr(args, valueIndex);
 #ifdef _WIN32
-  cmd += "-S res,ext;" + value + " --recode " + value;
+  cmd += "-S \"ext:" + value + "\" --recode \"" + value + "\"";
   cmd += " ";
 #elifdef unix
-  cmd += "-S 'res,ext:" + value + "' --recode '" + value + "'";
+  cmd += "-S 'ext:" + value + "' --recode '" + value + "'";
   cmd += " ";
 #elifndef
 #endif
@@ -78,7 +78,7 @@ void qualityArgument(std::vector<std::string> args, std::string &cmd, bool isLon
 
   std::string value = lowerStr(args, valueIndex);
 #ifdef _WIN32
-  cmd += "-S height:" + value + " -f bv*+ba/b";
+  cmd += "-S \"height:" + value + "\" -f \"bv*+ba/b\"";
   cmd += " ";
 #elifdef unix
   cmd += "-S 'height:" + value + "' -f 'bva*+ba/b'";
@@ -96,7 +96,6 @@ void outputArgument(std::vector<std::string> args, std::string &cmd, bool isLong
   }
 
   std::string value = lowerStr(args, valueIndex);
-  // todo: fix output not working
 #ifdef _WIN32
   cmd += "-o \"" + value + "\"";
   cmd += " ";
