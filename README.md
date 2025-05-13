@@ -9,6 +9,12 @@ The purpose of this project is simple, get the basic fundamental of using yt-dlp
 it works and how I can use it to the fullest, I will be moving on to my real project, which will involve a GUI to make
 the user experience better
 
+## Requirements
+[yt-dlp](https://github.com/yt-dlp/yt-dlp). The core of this program, it can't and will not work without it.  
+[FFmpeg](https://github.com/BtbN/FFmpeg-Builds). Required for merging video and audio. Without this, your video will be separated into video and audio.  
+It is recommended to put these executables into a folder and add said folder into your environment variables, to make
+setting up easier.
+
 ## Arguments
 The current arguments that are working right now are:  
 -h --help  

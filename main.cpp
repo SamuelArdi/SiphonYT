@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
-  std::cout << command << std::endl;
+  //std::cout << command << std::endl;
   system(command.c_str());
   return 0;
 }
