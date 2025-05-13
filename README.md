@@ -26,14 +26,14 @@ The current arguments that are working right now are:
 -o --output
 
 Arguments that are WIP:  
-as of this moment, no arguments are WIP
+-[ ] --yes-playlist
+-[ ] --write-subs
+-[ ] --sub-langs  
+-[ ] --limit-rate  
+-[ ] --skip-download  
+-[ ] --proxy  
+-[ ] --cookies-from-browser  
+-[x] -F
 
 Plan to add arguments:  
---yes-playlist
---write-subs
---sub-langs  
---limit-rate  
---skip-download  
---proxy  
---cookies-from-browser  
--F
+as of this moment, no arguments are planned to be added.

@@ -9,6 +9,7 @@ void showHelp();
 void showVersion();
 void extractAudio(std::string cmd);
 void keepOrgFile(std::string cmd);
+void showAvailableFormats(std::string cmd);
 
 void formatArgument(std::vector<std::string> args, std::string &cmd,
                     bool isLong);

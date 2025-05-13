@@ -48,6 +48,11 @@ void keepOrgFile(std::string cmd) {
   cmd += " ";
 }
 
+void showAvailableFormats(std::string cmd) {
+  cmd += "-F";
+  cmd += " ";
+}
+
 // value arguments
 void formatArgument(std::vector<std::string> args, std::string &cmd, bool isLong) {
   int valueIndex;
