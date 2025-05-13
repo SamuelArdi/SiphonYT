@@ -33,7 +33,7 @@ Arguments that are WIP:
 -[ ] --skip-download  
 -[ ] --proxy  
 -[ ] --cookies-from-browser  
--[x] -F, 
+-[x] -F  
 
 Plan to add arguments:  
 as of this moment, no arguments are planned to be added.
