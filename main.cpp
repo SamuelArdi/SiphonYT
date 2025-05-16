@@ -49,6 +49,10 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   if (findVecElem(args, "-F") == true) {
     showAvailableFormats(command);
   }
+  
+  if (findVecElem(args, "--yes-playlist") == true) {
+    playlistDownload(command);    
+  }
 
   // value arguments
   if (findVecElem(args, "-f") == true) {
@@ -82,7 +86,7 @@ int main(int argc, char *argv[]) {
   }
 
 #ifdef _WIN32
-  std::string url = std::string(argv[argc - 1]);
+  std::string url = "\"" + std::string(argv[argc - 1]) + "\"";
 #elifdef unix
   std::string url = "'" + std::string(argv[argc - 1]) + "'";
 #elifndef

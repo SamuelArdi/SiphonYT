@@ -26,20 +26,17 @@ The current arguments that are working right now are:
 -o --output
 
 Arguments that are WIP:  
--[ ] --yes-playlist
--[ ] --write-subs
--[ ] --sub-langs  
--[ ] --limit-rate  
--[ ] --skip-download  
--[ ] --proxy  
--[ ] --cookies-from-browser  
--[x] -F
+- [ ] --yes-playlist
+- [ ] --write-subs
+- [ ] --sub-langs
+- [ ] --verbose
+- [ ] --skip-download
+- [ ] --proxy
+- [ ] --cookies-from-browser
+- [x] -F
+- [ ] --concurrent-fragments / -N
+- [ ] --quiet / -q
+- [ ] -t
 
 Plan to add arguments:  
---no-metadata  
--t  
---verbose  
---silent  
---codec  
---bitrate  
---start & --end  
+no arguments planned to be added as of this moment.

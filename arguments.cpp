@@ -52,6 +52,11 @@ void showAvailableFormats(std::string &cmd) {
   cmd += " ";
 }
 
+void playlistDownload(std::string &cmd) {
+  cmd += "--yes-playlist";
+  cmd += " ";
+}
+
 // value arguments
 void formatArgument(std::vector<std::string> args, std::string &cmd, bool isLong) {
   int valueIndex;

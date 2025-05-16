@@ -9,7 +9,7 @@ project(
 
 add_executable(siphonyt main.cpp arguments.cpp)
 
-set(mainDir "C:\\Programming\\Languages\\C++\\SiphonYT")
+set(mainDir "C:\\Programming\\Languages\\C++\\SiphonYT\\bin")
 
 set_target_properties(siphonyt PROPERTIES
     OUTPUT_NAME "siphonyt"
