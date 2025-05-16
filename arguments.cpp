@@ -1,5 +1,4 @@
 #include "arguments.h"
-#include <vector>
 
 // required functions
 std::string lowerStr(std::vector<std::string> args, int valueIndex) {
@@ -30,7 +29,7 @@ void showHelp() {
   std::cout << "-v                  Print program version and exit"
             << std::endl;
   std::cout << "-x                  Extract audio (no video)" << std::endl;
-  std::cout<< "-f <audio format>    Convert to selected audio format (default: opus)" << std::endl;
+  std::cout<< "-f <audio format>    Convert to selected audio format" << std::endl;
 }
 
 void showVersion() {
@@ -38,17 +37,17 @@ void showVersion() {
   std::cout << "Version: 1.0.0" << std::endl;
 }
 
-void extractAudio(std::string cmd) {
+void extractAudio(std::string &cmd) {
   cmd += "-x";
   cmd += " ";
 }
 
-void keepOrgFile(std::string cmd) {
+void keepOrgFile(std::string &cmd) {
   cmd += "-k";
   cmd += " ";
 }
 
-void showAvailableFormats(std::string cmd) {
+void showAvailableFormats(std::string &cmd) {
   cmd += "-F";
   cmd += " ";
 }

@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -46,6 +45,10 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   if (findVecElem(args, "-x") == true) {
     extractAudio(command);
   }
+  
+  if (findVecElem(args, "-F") == true) {
+    showAvailableFormats(command);
+  }
 
   // value arguments
   if (findVecElem(args, "-f") == true) {
@@ -90,12 +93,18 @@ int main(int argc, char *argv[]) {
   bool exitCli = false;
   handler(args, exitCli, command);
   command += url;
+  
+  // debugging
+  for (int i = 0; i < args.size(); i++) {
+    std::cout << "Arg " << i + 1 << ": " << args[i] << "\n"; // "\n" instead of std::endl for performance
+  }
+  std::cout << command << std::endl;
 
   if (exitCli == true) {
     return 0;
   }
 
-  //std::cout << command << std::endl;
+  // command activation
   system(command.c_str());
   return 0;
 }

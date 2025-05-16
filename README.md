@@ -36,4 +36,10 @@ Arguments that are WIP:
 -[x] -F
 
 Plan to add arguments:  
-as of this moment, no arguments are planned to be added.
+--no-metadata  
+-t  
+--verbose  
+--silent  
+--codec  
+--bitrate  
+--start & --end  

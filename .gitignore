@@ -5,6 +5,12 @@ utilities
 .idea
 .idea.backup.bak
 testing/
+build
+backup
+.vscode/
+
+# clang stuff
+.cache/
 
 # cmake stuff
 cmake-build-release
