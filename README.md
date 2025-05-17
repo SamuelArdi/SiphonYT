@@ -27,8 +27,8 @@ The current arguments that are working right now are:
 
 Arguments that are WIP:  
 - [x] --yes-playlist
-- [ ] --write-subs
-- [ ] --sub-langs
+- [x] --write-subs
+- [x] --sub-langs
 - [ ] --verbose
 - [ ] --skip-download
 - [ ] --proxy
@@ -37,10 +37,10 @@ Arguments that are WIP:
 - [ ] --concurrent-fragments / -N
 - [ ] --quiet / -q
 - [ ] -t
-- [ ] --list-subs
-- [ ] --sub-format
-- [ ] --write-auto-subs
-- [ ] --no-write-auto-subs
+- [x] --list-subs
+- [x] --sub-format
+- [x] --write-auto-subs
+- [x] --no-write-auto-subs
 
 Plan to add arguments:  
 no arguments planned to be added as of this moment.
