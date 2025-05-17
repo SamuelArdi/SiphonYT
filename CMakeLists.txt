@@ -7,11 +7,17 @@ project(
         LANGUAGES CXX
 )
 
-add_executable(siphonyt main.cpp arguments.cpp)
+set(FILES
+        main.cpp
+        arguments.cpp
+        handler.cpp
+)
+
+add_executable(siphonyt ${FILES})
 
 set(mainDir "C:\\Programming\\Languages\\C++\\SiphonYT\\bin")
 
 set_target_properties(siphonyt PROPERTIES
-    OUTPUT_NAME "siphonyt"
+        OUTPUT_NAME "siphonyt"
         RUNTIME_OUTPUT_DIRECTORY ${mainDir}
 )
