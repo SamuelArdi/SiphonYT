@@ -22,7 +22,7 @@ int getValueIndex(std::vector<std::string> vec, std::string arg) {
 
 // single arguments
 void showHelp() {
-  std::cout << "siphonyt [Arguments] [video/playlist url]" << std::endl;
+  std::cout << "usage: siphonyt <Arguments> <Video/Playlist URL>" << std::endl;
 
   std::cout << "\nArguments:" << std::endl;
   std::cout << "-h                  Print this help text and exit" << std::endl;
@@ -33,7 +33,7 @@ void showHelp() {
 }
 
 void showVersion() {
-  std::cout << "SiphonYT pre-alpha testing" << std::endl;
+  std::cout << "SiphonYT" << std::endl;
   std::cout << "Version: 1.0.0" << std::endl;
 }
 
