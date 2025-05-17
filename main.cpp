@@ -53,6 +53,27 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   if (findVecElem(args, "--yes-playlist") == true) {
     playlistDownload(command);    
   }
+  
+  // subtitles
+  if (findVecElem(args, "--write-subs") == true) {
+    writeSubs(command);
+  }
+
+  if (findVecElem(args, "--no-write-subs") == true) {
+    disableAutoSubs(command);
+  }
+  
+  if (findVecElem(args, "--write-auto-subs") == true) {
+    enableAutoSubs(command);
+  }
+  
+  if (findVecElem(args, "--no-write-auto-subs") == true) {
+    disableAutoSubs(command);
+  }
+  
+  if (findVecElem(args, "--list-subs") == true) {
+    listSubs(command);
+  }
 
   // value arguments
   if (findVecElem(args, "-f") == true) {
@@ -71,6 +92,15 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
     outputArgument(args, command, false);
   } else if (findVecElem(args, "--output") == true) {
     outputArgument(args, command, true);
+  }
+  
+  // subtitles
+  if (findVecElem(args, "--sub-format") == true) {
+    subFormats(args, command, true);
+  }
+  
+  if (findVecElem(args, "--sub-langs") == true) {
+    subLangs(args, command, true);
   }
 }
 

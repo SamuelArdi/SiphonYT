@@ -29,7 +29,7 @@ void showHelp() {
   std::cout << "-v                  Print program version and exit"
             << std::endl;
   std::cout << "-x                  Extract audio (no video)" << std::endl;
-  std::cout<< "-f <audio format>    Convert to selected audio format" << std::endl;
+  std::cout << "-f <audio format>    Convert to selected audio format" << std::endl;
 }
 
 void showVersion() {
@@ -54,6 +54,27 @@ void showAvailableFormats(std::string &cmd) {
 
 void playlistDownload(std::string &cmd) {
   cmd += "--yes-playlist";
+  cmd += " ";
+}
+
+// subtitles
+void writeSubs(std::string &cmd) {
+  cmd += "--write-subs";
+  cmd += " ";
+}
+
+void listSubs(std::string &cmd) {
+  cmd += "--list-subs";  
+  cmd += " ";
+}
+
+void enableAutoSubs(std::string &cmd) {
+  cmd += "--write-auto-subs";
+  cmd += " ";
+}
+
+void disableAutoSubs(std::string &cmd) {
+  cmd += "--no-write-auto-subs";
   cmd += " ";
 }
 
@@ -112,5 +133,39 @@ void outputArgument(std::vector<std::string> args, std::string &cmd, bool isLong
   cmd += "-o '" + value + "'";
   cmd += " ";
 #elifndef
+#endif
+  
+}
+
+// subtitle
+void subFormats(std::vector<std::string> args, std::string &cmd, bool isLong) {
+  int valueIndex;
+  if (isLong) {
+    valueIndex = getValueIndex(args, "--sub-format");
+  }
+  
+  std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "--sub-format \"" + value + "\"";
+  cmd += " ";
+#elif unix
+  cmd += "--sub-format '" + value + "'";
+  cmd += " ";
+#endif
+}
+
+void subLangs(std::vector<std::string> args, std::string &cmd, bool isLong) {
+  int valueIndex;
+  if (isLong) {
+    valueIndex = getValueIndex(args, "--sub-langs");
+  }
+
+  std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "--sub-langs \"" + value + "\"";
+  cmd += " ";
+#elif unix
+  cmd += "--sub-langs '" + value + "'";
+  cmd += " ";
 #endif
 }
