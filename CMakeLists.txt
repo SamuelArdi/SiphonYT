@@ -12,10 +12,11 @@ add_executable(siphonyt ${FILES})
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   message(STATUS "Building on linux")
-  set(mainDir "./bin/linux")
+  # Don't need to change dir because linux requires a different approach to make
+  # an executable
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   message(STATUS "Building on Windows")
-  set(mainDir ".\\bin\\windows")
+  set(mainDir ".\\bin\\windows\\")
 endif()
 
 set_target_properties(siphonyt PROPERTIES OUTPUT_NAME "siphonyt"

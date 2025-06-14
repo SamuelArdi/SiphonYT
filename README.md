@@ -12,6 +12,7 @@ the user experience better
 ## Requirements
 [yt-dlp](https://github.com/yt-dlp/yt-dlp). The core of this program, it can't and will not work without it.  
 [FFmpeg](https://github.com/BtbN/FFmpeg-Builds). Required for merging video and audio. Without this, your video will be separated into it's video format and it's audio format.  
+
 It is recommended to put these executables into a folder and add said folder into your environment variables, to make
 setting up easier.
 
@@ -36,7 +37,7 @@ Arguments that are WIP:
 - [x] -F
 - [ ] --concurrent-fragments / -N
 - [ ] --quiet / -q
-- [ ] -t
+- [ ] -t / --preset-alias
 - [x] --list-subs
 - [x] --sub-format
 - [x] --write-auto-subs
