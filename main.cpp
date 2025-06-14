@@ -32,15 +32,15 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   if (findVecElem(args, "-x") == true) {
     extractAudio(command);
   }
-  
+
   if (findVecElem(args, "-F") == true) {
     showAvailableFormats(command);
   }
-  
+
   if (findVecElem(args, "--yes-playlist") == true) {
-    playlistDownload(command);    
+    playlistDownload(command);
   }
-  
+
   // subtitles
   if (findVecElem(args, "--write-subs") == true) {
     writeSubs(command);
@@ -49,15 +49,15 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   if (findVecElem(args, "--no-write-subs") == true) {
     disableAutoSubs(command);
   }
-  
+
   if (findVecElem(args, "--write-auto-subs") == true) {
     enableAutoSubs(command);
   }
-  
+
   if (findVecElem(args, "--no-write-auto-subs") == true) {
     disableAutoSubs(command);
   }
-  
+
   if (findVecElem(args, "--list-subs") == true) {
     listSubs(command);
   }
@@ -80,12 +80,12 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   } else if (findVecElem(args, "--output") == true) {
     outputArgument(args, command, true);
   }
-  
+
   // subtitles
   if (findVecElem(args, "--sub-format") == true) {
     subFormats(args, command, true);
   }
-  
+
   if (findVecElem(args, "--sub-langs") == true) {
     subLangs(args, command, true);
   }
@@ -115,10 +115,11 @@ int main(int argc, char *argv[]) {
   bool exitCli = false;
   handler(args, exitCli, command);
   command += url;
-  
+
   // debugging
   for (int i = 0; i < args.size(); i++) {
-    std::cout << "Arg " << i + 1 << ": " << args[i] << "\n"; // "\n" instead of std::endl for performance
+    std::cout << "Arg " << i + 1 << ": " << args[i]
+              << "\n"; // "\n" instead of std::endl for performance
   }
   std::cout << command << std::endl;
 
@@ -127,6 +128,6 @@ int main(int argc, char *argv[]) {
   }
 
   // command activation
-  system(command.c_str());
+  // system(command.c_str());
   return 0;
 }

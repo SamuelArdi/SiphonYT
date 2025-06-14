@@ -1,17 +1,13 @@
-# not important files / directories
-test.cpp
-test videos
-utilities
-.idea
-.idea.backup.bak
-testing/
-build
-backup
 .vscode/
+backup/
+bin/*
+testing/
+test videos/
 
 # clang stuff
 .cache/
 
 # cmake stuff
-cmake-build-release
+linux-build
+windows-build
 *.pdb

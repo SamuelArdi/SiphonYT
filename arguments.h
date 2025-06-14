@@ -12,7 +12,7 @@ void keepOrgFile(std::string &cmd);
 void showAvailableFormats(std::string &cmd);
 void playlistDownload(std::string &cmd);
 
-// subtitles
+// no-value subtitles
 void writeSubs(std::string &cmd);
 void listSubs(std::string &cmd);
 void enableAutoSubs(std::string &cmd);
@@ -25,8 +25,7 @@ void qualityArgument(std::vector<std::string> args, std::string &cmd,
                      bool isLong);
 void outputArgument(std::vector<std::string> args, std::string &cmd, bool isLong);
 
-
-// subtitles
+//  value subtitles
 void subFormats(std::vector<std::string> args, std::string &cmd, bool isLong);
 void subLangs(std::vector<std::string> args, std::string &cmd, bool isLong);
 

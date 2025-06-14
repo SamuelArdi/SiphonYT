@@ -1,8 +1,8 @@
 #ifndef HANDLER_H
 #define HANDLER_H
 
-#include <vector>
 #include <string>
+#include <vector>
 
 void handler(std::vector<std::string> args, bool &exit, std::string &command);
 
