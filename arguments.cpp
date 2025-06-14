@@ -218,7 +218,7 @@ void concurrentFragments(std::vector<std::string> args, std::string &cmd,
                          bool isLong) {
   int valueIndex;
   if (isLong == true) {
-    valueIndex = getValueIndex(args, "--conccurent-fragments");
+    valueIndex = getValueIndex(args, "--concurrent-fragments");
   } else {
     valueIndex = getValueIndex(args, "-N");
   }
@@ -228,7 +228,7 @@ void concurrentFragments(std::vector<std::string> args, std::string &cmd,
   cmd += "--conccurent-fragments \"" + value + "\"";
   cmd += " ";
 #elif unix
-  cmd += "--conccurent-fragments '" + value + "'";
+  cmd += "--concurrent-fragments '" + value + "'";
   cmd += " ";
 #endif
 }
