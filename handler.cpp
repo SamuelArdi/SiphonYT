@@ -110,4 +110,24 @@ void handler(std::vector<std::string> args, bool &exit, std::string &command) {
   } else if (findVecElem(args, "--output") == true) {
     outputArgument(args, command, true);
   }
+
+  if (findVecElem(args, "--proxy") == true) {
+    proxy(args, command, false);
+  }
+
+  if (findVecElem(args, "cookies-from-browser") == true) {
+    cookiesFromBrowser(args, command, true);
+  }
+
+  if (findVecElem(args, "-N") == true) {
+    concurrentFragments(args, command, false);
+  } else if (findVecElem(args, "--concurrent-fragments") == true) {
+    concurrentFragments(args, command, true);
+  }
+
+  if (findVecElem(args, "--preset-alias") == true) {
+    presetAlias(args, command, true);
+  } else if (findVecElem(args, "-t") == true) {
+    presetAlias(args, command, false);
+  }
 }

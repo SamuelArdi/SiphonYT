@@ -32,12 +32,12 @@ Arguments that are WIP:
 - [x] --sub-langs
 - [x] --verbose
 - [x] --skip-download
-- [ ] --proxy
-- [ ] --cookies-from-browser
+- [x] --proxy
+- [x] --cookies-from-browser
 - [x] -F
-- [ ] --concurrent-fragments / -N
+- [x] --concurrent-fragments / -N
 - [x] --quiet / -q
-- [ ] -t / --preset-alias
+- [x] -t / --preset-alias
 - [x] --list-subs
 - [x] --sub-format
 - [x] --write-auto-subs

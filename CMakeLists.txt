@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 set(CMAKE_CXX_STANDARD 26)
 project(
   siphonyt
-  VERSION 1.0.1
+  VERSION 1.0.2
   DESCRIPTION "A YouTube converter using yt-dlp"
   LANGUAGES CXX)
 

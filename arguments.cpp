@@ -56,7 +56,7 @@ void showHelp() {
 
 void showVersion() {
   std::cout << "SiphonYT" << std::endl;
-  std::cout << "Version: 1.0.0" << std::endl;
+  std::cout << "Version: 1.0.2" << std::endl;
 }
 
 void extractAudio(std::string &cmd) {
@@ -181,6 +181,72 @@ void outputArgument(std::vector<std::string> args, std::string &cmd,
   cmd += " ";
 #elif unix
   cmd += "-o '" + value + "'";
+  cmd += " ";
+#endif
+}
+
+void proxy(std::vector<std::string> args, std::string &cmd, bool isLong) {
+  int valueIndex;
+  valueIndex = getValueIndex(args, "--proxy");
+
+  std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "--proxy \"" + value + "\"";
+  cmd += " ";
+#elif unix
+  cmd += "--proxy '" + value = "'";
+  cmd += " ";
+#endif
+}
+
+void cookiesFromBrowser(std::vector<std::string> args, std::string &cmd,
+                        bool isLong) {
+  int valueIndex;
+  valueIndex = getValueIndex(args, "--cookies-from-browser");
+
+  std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "--cookies-from-browser \"" + value + "\"";
+  cmd += " ";
+#elif unix
+  cmd += "--cookies-from-browser " + value + "'";
+  cmd += " ";
+#endif
+}
+
+void concurrentFragments(std::vector<std::string> args, std::string &cmd,
+                         bool isLong) {
+  int valueIndex;
+  if (isLong == true) {
+    valueIndex = getValueIndex(args, "--conccurent-fragments");
+  } else {
+    valueIndex = getValueIndex(args, "-N");
+  }
+
+  std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "--conccurent-fragments \"" + value + "\"";
+  cmd += " ";
+#elif unix
+  cmd += "--conccurent-fragments '" + value + "'";
+  cmd += " ";
+#endif
+}
+
+void presetAlias(std::vector<std::string> args, std::string &cmd, bool isLong) {
+  int valueIndex;
+  if (isLong == true) {
+    valueIndex = getValueIndex(args, "--preset-alias");
+  } else {
+    valueIndex = getValueIndex(args, "-t");
+  }
+
+  std::string value = lowerStr(args, valueIndex);
+#ifdef _WIN32
+  cmd += "--preset-alias \"" + value + "\"";
+  cmd += " ";
+#elif unix
+  cmd += "--preset-alias '" + value + "'";
   cmd += " ";
 #endif
 }
