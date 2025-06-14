@@ -30,13 +30,13 @@ Arguments that are WIP:
 - [x] --yes-playlist
 - [x] --write-subs
 - [x] --sub-langs
-- [ ] --verbose
-- [ ] --skip-download
+- [x] --verbose
+- [x] --skip-download
 - [ ] --proxy
 - [ ] --cookies-from-browser
 - [x] -F
 - [ ] --concurrent-fragments / -N
-- [ ] --quiet / -q
+- [x] --quiet / -q
 - [ ] -t / --preset-alias
 - [x] --list-subs
 - [x] --sub-format
