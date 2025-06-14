@@ -43,7 +43,7 @@ setting up easier.
                                 e.g. socks5://user:pass@127.0.0.1:1080/.
                                 Pass in an empty string (--proxy "") for
                                 direct connection
---cookies-from-browser <BROWSER[+KEYRING][:PROFILE][::CONTAINER]>
+--cookies-from-browser <BROWSER[+KEYRING][:PROFILE][::CONTAINER]>  
                                 The name of the browser to load cookies
                                 from. Currently supported browsers are:
                                 brave, chrome, chromium, edge, firefox,
