@@ -158,10 +158,14 @@ void qualityArgument(std::vector<std::string> args, std::string &cmd,
 
   std::string value = lowerStr(args, valueIndex);
 #ifdef _WIN32
-  cmd += "-S \"height:" + value + "\" -f \"bv*+ba/b\"";
+  // cmd += "-S \"height:" + value + "\" -f \"bv*+ba/b\"";
+  // cmd += " ";
+  cmd += "--format-sort-force -S \"height:" + value + ",abr,acodec\"";
   cmd += " ";
 #elif unix
-  cmd += "-S 'height:" + value + "' -f 'bva*+ba/b'";
+  // cmd += "-S 'height:" + value + "' -f 'bva*+ba/b'";
+  // cmd += " ";
+  cmd += "--format-sort-force -S 'height:" + value + ",abr,acodec'";
   cmd += " ";
 #endif
 }

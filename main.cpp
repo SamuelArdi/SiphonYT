@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
   }
 
 #ifdef _WIN32
-  std::string url = "\"" + std::string(argv[argc - 1]) + "\"";
+
 #elif unix
   std::string url = "'" + std::string(argv[argc - 1]) + "'";
 #endif
@@ -29,12 +29,15 @@ int main(int argc, char *argv[]) {
   command += url;
 
   // debugging
-  // REMEMBER TO COMMENT ONCE DONE DEBUGGING
+  // TODO: REMEMBER TO COMMENT ONCE DONE DEBUGGING
   for (int i = 0; i < args.size(); i++) {
     std::cout << "Arg " << i + 1 << ": " << args[i]
               << "\n"; // "\n" instead of std::endl for performance
   }
-  std::cout << command << std::endl;
+  std::cout << command << std::endl
+            << std::endl; // 2 endl to seperate the test command from the actual
+                          // yt-dlp command
+  // end of debugging
 
   // for single use commands
   if (exitCli == true) {
