@@ -29,7 +29,9 @@ int main(int argc, char *argv[]) {
   command += url;
 
   // debugging
-  // TODO: REMEMBER TO COMMENT ONCE DONE DEBUGGING
+  // TODO: REMEMBER TO COMMENT AFTER DEBUGGING
+
+  /*
   for (int i = 0; i < args.size(); i++) {
     std::cout << "Arg " << i + 1 << ": " << args[i]
               << "\n"; // "\n" instead of std::endl for performance
@@ -37,6 +39,8 @@ int main(int argc, char *argv[]) {
   std::cout << command << std::endl
             << std::endl; // 2 endl to seperate the test command from the actual
                           // yt-dlp command
+  */
+
   // end of debugging
 
   // for single use commands
